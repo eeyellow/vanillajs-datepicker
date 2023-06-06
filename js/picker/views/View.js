@@ -28,6 +28,11 @@ export default class View {
     this.disabled = [];
 
     const picker = this.picker;
+    
+    if(picker.datepicker._options.language == 'zh-TW' && picker.datepicker._options.ROCTransfer) {
+      switchLabel = picker.datepicker._options.ROCTransfer(switchLabel, picker.currentView);
+    } 
+
     picker.setViewSwitchLabel(switchLabel);
     picker.setPrevButtonDisabled(prevButtonDisabled);
     picker.setNextButtonDisabled(nextButtonDisabled);
@@ -69,6 +74,12 @@ export default class View {
   }
 
   renderCell(el, content, cellVal, date, {selected, range}, outOfScope, extraClasses = []) {
+    if (this.picker.datepicker._options.language == 'zh-TW' && this.picker.datepicker._options.ROCTransfer) {
+      if (el.dataset.year){
+        content = content - 1911;
+      }
+    }
+
     el.textContent = content;
     if (this.isMinView) {
       el.dataset.date = date;

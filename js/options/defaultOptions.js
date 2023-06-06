@@ -13,8 +13,8 @@ export default {
   defaultViewDate: undefined, // placeholder, defaults to today() by the program
   disableTouchKeyboard: false,
   enableOnReadonly: true,
-  format: 'mm/dd/yyyy',
-  language: 'en',
+  format: 'yyyy/mm/dd',
+  language: 'zh-TW',
   maxDate: null,
   maxNumberOfDates: 1,
   maxView: 3,

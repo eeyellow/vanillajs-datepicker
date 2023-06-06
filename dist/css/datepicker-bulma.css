@@ -262,6 +262,14 @@
   background-color: #d0d0d0;
 }
 
+.datepicker-input::-moz-selection {
+  background-color: transparent;
+}
+
+.datepicker-input::selection {
+  background-color: transparent;
+}
+
 .datepicker-input.in-edit {
   border-color: #3d56c3;
 }

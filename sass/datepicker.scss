@@ -5,7 +5,7 @@
 $black: hsl(0, 0%, 4%) !default;
 $white: hsl(0, 0%, 100%) !default;
 $light: hsl(0, 0%, 96%) !default; // white-ter
-$dark: hsl(0, 0%, 21%) !default;  // grey-darker
+$dark: hsl(0, 0%, 21%) !default; // grey-darker
 $link: hsl(217, 71%, 53%) !default; // blue
 
 $grey-dark: color.scale($black, $lightness: 25%) !default;
@@ -35,8 +35,8 @@ $dp-cell-disabled-color: $grey-lighter !default;
 $dp-cell-selected-background-color: $link !default;
 $dp-cell-selected-color: #fff !default; // link(blue)-invert
 $dp-cell-selected-font-weight: $dp-font-weight-semibold !default;
-$dp-cell-today-background-color: hsl(171, 100%, 41%) !default;  // turquoise (primary)
-$dp-cell-today-color: #fff !default;  // turquoise-invert
+$dp-cell-today-background-color: hsl(171, 100%, 41%) !default; // turquoise (primary)
+$dp-cell-today-color: #fff !default; // turquoise-invert
 $dp-cell-highlighted-background-color: $light !default;
 $dp-range-start-end-background-color: $grey-light !default;
 $dp-range-start-end-color: $dp-cell-selected-color !default;
@@ -135,7 +135,9 @@ $dp-one-seventh: math.percentage(math.div(1, 7));
 
   @if mixin-exists(dp-button) {
     @include dp-button;
-  } @else {
+  }
+
+  @else {
     .button {
       $button-color: $dark;
       $button-background-color: $white;
@@ -147,15 +149,15 @@ $dp-one-seventh: math.percentage(math.div(1, 7));
       $button-padding-horizontal: 0.75em;
 
       $button-hover-color: $dark; // link-hover
-      $button-hover-border-color: $grey-light;  // link-hover-border
+      $button-hover-border-color: $grey-light; // link-hover-border
 
       $button-focus-color: $dark; // link-focus
-      $button-focus-border-color: $link;  // link-focus-border
+      $button-focus-border-color: $link; // link-focus-border
       $button-focus-box-shadow-size: 0 0 0 0.125em;
       $button-focus-box-shadow-color: rgb($link, 0.25);
 
-      $button-active-color: $dark;  // link-active
-      $button-active-border-color: $grey-dark;  // link-active-border
+      $button-active-color: $dark; // link-active
+      $button-active-border-color: $grey-dark; // link-active-border
 
       display: inline-flex;
       position: relative;
@@ -171,10 +173,10 @@ $dp-one-seventh: math.percentage(math.div(1, 7));
       height: 2.25em; // control-height
       vertical-align: top;
       text-align: center;
-      line-height: $dp-line-height-base;  // control-line-height
+      line-height: $dp-line-height-base; // control-line-height
       white-space: nowrap;
       color: $button-color;
-      font-size: $dp-font-size-normal;  // size-normal
+      font-size: $dp-font-size-normal; // size-normal
 
       &:focus,
       &:active {
@@ -328,6 +330,7 @@ $dp-one-seventh: math.percentage(math.div(1, 7));
   }
 
   &.selected {
+
     &,
     &:hover {
       background-color: $dp-cell-selected-background-color;
@@ -431,12 +434,16 @@ $dp-one-seventh: math.percentage(math.div(1, 7));
       background-color: $dp-range-focus-background-color;
     }
 
-    @if $dp-range-today-background-color != $dp-cell-today-background-color {
+    @if $dp-range-today-background-color !=$dp-cell-today-background-color {
       &.today {
         background-color: $dp-range-today-background-color;
       }
     }
   }
+}
+
+.datepicker-input::selection {
+  background-color: transparent;
 }
 
 .datepicker-input.in-edit {

@@ -221,6 +221,8 @@ export default class Datepicker {
       registerListeners(this, [keydownListener]);
       this.show();
     }
+
+    triggerDatepickerEvent(this, 'afterInit');
   }
 
   /**
